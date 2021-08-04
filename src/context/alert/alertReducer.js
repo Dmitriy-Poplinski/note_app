@@ -8,5 +8,5 @@ const handlers = {
 
 export const alertReducer = (state, action) => {
     const handle = handlers[action.type] || handlers.DEFAULT
-    return (state, action)
+    return handle(state, action)
 }

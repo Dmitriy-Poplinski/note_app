@@ -12,7 +12,7 @@ export function Notes({notes}) {
                                     </div>
                                 <button 
                                     type="button" 
-                                    class="btn btn-outline-danger btn-sm">&times;</button>
+                                    className="btn btn-outline-danger btn-sm">&times;</button>
                             </li>)
             }
         </ul>

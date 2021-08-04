@@ -7,13 +7,14 @@ export const AlertState = ({children}) => {
     const [state, dispatch] = useReducer(alertReducer, {visible: false})
 
     function show(text, type='warning') {
+        
         dispatch({
             type: SHOW_ALERT,
             payload: {text, type}
         })
     }
 
-    function hide(text, type='warning') {
+    function hide() {
         dispatch({
             type: HIDE_ALERT,
         })
