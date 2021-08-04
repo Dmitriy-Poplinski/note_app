@@ -53,12 +53,10 @@ export const FirebaseState = ({children}) => {
 
     const removeNote = async id => {
         await axios.delete(`${url}/notes/${id}.json`)
-        console.log('Remove note')
         dispatch({
             type: REMOVE_NOTE,
             payload: id
         })
-        fetchNotes()
     }
 
     const [state, dispatch] = useReducer(firebaseReducer, initialState)

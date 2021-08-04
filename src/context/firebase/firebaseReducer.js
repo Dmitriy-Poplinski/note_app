@@ -11,10 +11,12 @@ const handlers = {
         notes: payload,
         loading: false
     }),
-    [REMOVE_NOTE]: (state, payload) => ({
+    [REMOVE_NOTE]: (state, {payload}) => {
+        return ({
         ...state,
-        notes: state.notes.filter(note => note.id !== payload)
-    }),
+        notes: state.notes.filter(note => { 
+            return note.id !== payload})
+    })},
     DEFAULT: state => state,
 }
 

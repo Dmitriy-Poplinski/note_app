@@ -1,15 +1,22 @@
+import {TransitionGroup, CSSTransition} from 'react-transition-group'
+
 export function Notes({notes, onRemove}) {
     return (
-        <ul className='list-group'>
+        <TransitionGroup component='ul' className='list-group'>
             {
-                notes.map(note => <li 
-                                    className='list-group-item note'
-                                    key={note.id}
-                                >   
-                                    <div>
-                                        <strong>{note.title}</strong>
-                                        <small>{note.date}</small>
-                                    </div>
+                notes.map(note => 
+                        <CSSTransition
+                            key={note.id}
+                            classNames={'note'}
+                            timeout={800}
+                        >
+                            <li 
+                                className='list-group-item note'
+                            >   
+                                <div>
+                                    <strong>{note.title}</strong>
+                                    <small>{note.date}</small>
+                                </div>
                                 <button 
                                     type="button" 
                                     className="btn btn-outline-danger btn-sm"
@@ -17,8 +24,9 @@ export function Notes({notes, onRemove}) {
                                     >
                                         &times;
                                 </button>
-                            </li>)
+                            </li>
+                        </CSSTransition>)
             }
-        </ul>
+        </TransitionGroup>
     )
 }
