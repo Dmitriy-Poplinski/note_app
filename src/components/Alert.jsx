@@ -10,9 +10,11 @@ export function Alert() {
 
     return  (
         <div className={`alert alert-${alert.type || 'warning'} alert-dismissible`} role="alert">
-            <strong>Внимание!</strong> 
-            &nbsp;&nbsp;{alert.text}
-            <button onClick={hide} type="button" className="close" aria-label="Close">
+            <div className='alert-info-wrapper'>
+                <strong>Внимание!</strong> 
+                <p>&nbsp;&nbsp;{alert.text}</p>
+            </div>
+            <button type="button" onClick={hide} className="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>

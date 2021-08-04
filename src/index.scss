@@ -24,4 +24,22 @@ code {
   }
 }
 
+.alert-info-wrapper{
+  display: flex;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  button {
+    padding: 0;
+    font-size: 30px;
+    color: red;
+    height: 30px;
+    background: transparent;
+    border: none;
+    margin-top: 0;
+  }
+}
+
 
